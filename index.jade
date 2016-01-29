@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+html(lang="en" ng-app="analyzer")
+head
+  meta(charset="UTF-8")
+  title Document
+  link(rel="stylesheet", href="styles/styles.css")
+body(ng-controller="ChartController")
+  .wrapper
+    .header
+      .container
+        a(href="#") Statistics
+    .content
+      .container
+        .dir
+          label(for="directory") Enter path to angular scripts: 
+          input(type="text" id="directory" ng-model="path")
+          input(type="button" value="Show statistics" ng-click="showChart()")
+        #chart
+  .footer
+  
+  script(src="node_modules/angular/angular.min.js")
+  script(src="node_modules/angular-ui-router/build/angular-ui-router.min.js")
+  script(src="node_modules/highcharts/highcharts.js")
+  script(src="app/modules/app.module.js")
+  script(src="app/controllers/chart.controller.js")
